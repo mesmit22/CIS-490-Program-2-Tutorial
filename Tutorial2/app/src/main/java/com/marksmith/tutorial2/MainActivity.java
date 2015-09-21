@@ -6,15 +6,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView mainTextView;
     Button mainButton;
+    EditText mainEditText;
 
     @Override
     public void onClick(View v) {
-        mainTextView.setText("Button pressed!");
+        mainTextView.setText(mainEditText.getText().toString()
+                + "is learning Android Development");
     }
 
     @Override
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mainTextView.setText("Set in Java!");
         mainButton = (Button)findViewById(R.id.main_button);
         mainButton.setOnClickListener(this);
+        mainEditText = (EditText)findViewById(R.id.main_edittext);
     }
 
     @Override
